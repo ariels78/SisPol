@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace SisPol\Commands;
 
 abstract class Command {
 

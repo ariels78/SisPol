@@ -1,6 +1,6 @@
-<?php namespace App\Services;
+<?php namespace SisPol\Services;
 
-use App\User;
+use SisPol\User;
 use Validator;
 use Illuminate\Contracts\Auth\Registrar as RegistrarContract;
 
