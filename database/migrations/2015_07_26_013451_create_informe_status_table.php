@@ -15,7 +15,6 @@ class CreateInformeStatusTable extends Migration {
 		Schema::create('informe_status', function(Blueprint $table)
 		{
 			$table->increments('id');
-            $table
 			$table->timestamps();
 		});
 	}
