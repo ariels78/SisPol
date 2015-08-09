@@ -31,10 +31,10 @@
                 <li class="nav-header">
                     <div class="dropdown profile-element">
                         <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">Carlos Butrón</strong>
-                             </span> <span class="text-muted text-xs block">Web Developer <b class="caret"></b></span> </span> </a>
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">{{ Auth::user()->name }}</strong>
+                             </span> <span class="text-muted text-xs block">{{ Auth::user()->type }} <b class="caret"></b></span> </span> </a>
                         <ul class="dropdown-menu animated fadeInRight m-t-xs">
-                            <li><a href="#">Cerrar Sesión</a></li>
+                            <li><a href="{{ url('/auth/logout') }}">Cerrar Sesión</a></li>
                         </ul>
                     </div>
                     <div class="logo-element">
@@ -65,7 +65,7 @@
                 </div>
                 <ul class="nav navbar-top-links navbar-right">
                     <li>
-                        <a href="#">
+                        <a href="{{ url('/auth/logout') }}">
                             <i class="fa fa-sign-out"></i> Cerrar Sesión
                         </a>
                     </li>

@@ -35,18 +35,23 @@
             <!--Continually expanded and constantly improved Inspinia Admin Them (IN+)-->
         </p>
         <p>Proporciona tu datos</p>
-        <form class="m-t" role="form" action="index.html">
+        @include('partials/errors')
+        <form class="m-t" role="form" method="POST" action="{{ url('/auth/login') }}">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
             <div class="form-group">
-                <input type="email" class="form-control" placeholder="Usuario" required="">
+                <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Usuario" required="">
             </div>
             <div class="form-group">
-                <input type="password" class="form-control" placeholder="Contraseña" required="">
+                <input type="password" class="form-control" name="password" placeholder="Contraseña" required="">
+
             </div>
+
+
             <button type="submit" class="btn btn-primary block full-width m-b">Entrar al sistema</button>
 
-            <a href="#"><small>Olvidaste tu contraseña?</small></a>
+            <a href="{{ url('/password/email') }}"><small>Olvidaste tu contraseña?</small></a>
             <p class="text-muted text-center"><small>No tienes una cuenta?</small></p>
-            <a class="btn btn-sm btn-white btn-block" href="auth/register.blade.php">Crea una cuenta</a>
+            <a class="btn btn-sm btn-white btn-block" href="{{ url('/auth/register') }}">Crea una cuenta</a>
         </form>
         <p class="m-t"> <small>Derechos reservados elijav &copy; 2015</small> </p>
     </div>
